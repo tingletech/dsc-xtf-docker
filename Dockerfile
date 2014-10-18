@@ -13,13 +13,14 @@ RUN \
   apt-get install -y oracle-java7-installer && \
   apt-get install -yq --no-install-recommends wget pwgen ca-certificates && \
   apt-get install -y python-setuptools python-dev build-essential && \
-  easy_install -U mercurial awscli
-#  apt-get clean && \
-#  rm -rf /var/lib/apt/lists/* && \
-#  rm -rf /var/cache/oracle-jdk7-installer
- 
-ENV TOMCAT_MAJOR_VERSION 8
-ENV TOMCAT_MINOR_VERSION 8.0.11
+  easy_install -U mercurial awscli && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* && \
+  rm -rf /var/cache/oracle-jdk7-installer
+
+
+ENV TOMCAT_MAJOR_VERSION 7 
+ENV TOMCAT_MINOR_VERSION 7.0.56
 ENV CATALINA_HOME /root/tomcat 
 
 ENV ANT_MINOR_VERSION 1.9.4
