@@ -28,6 +28,12 @@ rm index.tar
 
 # get layout templates for XTF
 cd /
-aws s3 cp s3://xtf.dsc.cdlib.org/layouts.tar.gz .
+aws s3 cp "${XTF_LAYOUTS}" .
 tar zxf layouts.tar.gz
 rm layouts.tar.gz
+
+# get includes for XTF
+cd /
+aws s3 cp "${XTF_INCLUDES}" .
+tar zxf includes.tar.gz
+rm includes.tar.gz
