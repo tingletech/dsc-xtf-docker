@@ -21,8 +21,7 @@ in `file` set:
 ```
 AWS_ACCESS_KEY_ID=...
 AWS_SECRET_ACCESS_KEY=...
-XTF_LAYOUTS=s3://.../layouts.tar.gz
-XTF_INCLUDES=s3://.../includes.tar.gz
+XTF_LAYOUTS=s3://.../xtf-includes-layouts-sections.tar.gz
 XTF_INDEX_TAR=s3://.../indexes/...tar
 ```
 

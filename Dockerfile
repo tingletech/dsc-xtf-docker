@@ -51,6 +51,7 @@ RUN wget -q http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_MINOR_V
 # XTF
 ENV XTF_DATA /xtf/data
 ENV XTF_HOME /xtf
+ENV OAC_TEMPLATE_BASE /
 
 COPY run.sh /run.sh
 COPY init.sh /init.sh
