@@ -14,7 +14,7 @@ boot2docker ssh sudo date -u -D %Y%m%dT%T --set="$(date -u +%Y%m%dT%T)"
 when testing
 
 ```
-docker run --rm -p 8080:8080 -i -t -e XTF_INDEX_TAR=s3://xtf.dsc.cdlib.org/indexes/index-test-00.tar [image] bash
+docker run --rm -p 8080:8080 -i -t --env-file file [image]
 ```
 
 then run `aws configure` and `/run.sh`
