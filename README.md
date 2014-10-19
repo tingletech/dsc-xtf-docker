@@ -14,10 +14,17 @@ boot2docker ssh sudo date -u -D %Y%m%dT%T --set="$(date -u +%Y%m%dT%T)"
 when testing
 
 ```
-docker run --rm -p 8080:8080 -i -t --env-file file [image]
+docker run --rm -p 8080:8080 --env-file file [image]
 ```
 
-then run `aws configure` and `/run.sh`
+in `file` set:
+```
+AWS_ACCESS_KEY_ID=...
+AWS_SECRET_ACCESS_KEY=...
+XTF_LAYOUTS=s3://.../layouts.tar.gz
+XTF_INCLUDES=s3://.../includes.tar.gz
+XTF_INDEX_TAR=s3://.../indexes/...tar
+```
 
 XTF should then be running on `http://192.168.59.103:8080/xtf/search`
 
