@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -ie
+
+# install XTF if it is not there
 if [ ! -d /xtf ]; then
     /init.sh
 fi
