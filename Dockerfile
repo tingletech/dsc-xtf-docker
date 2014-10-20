@@ -17,7 +17,7 @@ RUN \
   apt-get update && \
   apt-get install -yq --no-install-recommends \
     ca-certificates \
-    build-essential \
+    mercurial \
     oracle-java7-installer \
     oracle-java7-set-default \
     python-dev \
@@ -25,8 +25,7 @@ RUN \
     pwgen \
     wget && \
   easy_install -U \
-    awscli \
-    mercurial && \
+    awscli && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
   rm -rf /var/cache/oracle-jdk7-installer
