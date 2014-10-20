@@ -3,6 +3,12 @@ AWS elastic beanstalk
 
 # notes
 
+## build docker image locally
+
+```
+docker build -t tag .
+```
+
 ## fix date skew (for AWS)
 
 ```
@@ -14,7 +20,7 @@ boot2docker ssh sudo date -u -D %Y%m%dT%T --set="$(date -u +%Y%m%dT%T)"
 when testing
 
 ```
-docker run --rm -p 8080:8080 --env-file file [image]
+docker run --rm -p 8080:8080 --env-file file tag
 ```
 
 in `file` set:
@@ -26,6 +32,13 @@ XTF_INDEX_TAR=s3://.../indexes/...tar
 ```
 
 XTF should then be running on `http://192.168.59.103:8080/xtf/search`
+
+## clean up
+
+```
+docker rm $(docker ps -aq)
+docker rmi $(docker images --filter dangling=true --quiet)
+```
 
 # License
 
