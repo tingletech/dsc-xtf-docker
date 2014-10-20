@@ -8,7 +8,7 @@ set -ie
 cd / 
 hg clone https://bitbucket.org/btingle/dsc-xtf -r dsc-prod-xtf3.0 xtf
 cd /xtf/WEB-INF
-/root/ant/bin/ant
+/ant/bin/ant
 
 # set up METS support
 cd /xtf
@@ -17,8 +17,8 @@ cd style
 ln -s ../mets-support/xslt/view/common
 
 # git rid of default apps and put in a link to XTF
-rm -rf /root/tomcat/webapps/*
-ln -s /xtf /root/tomcat/webapps/xtf
+rm -rf /tomcat/webapps/*
+ln -s /xtf /tomcat/webapps/xtf
 
 # get a pre-built index from amazon s3
 cd /xtf
