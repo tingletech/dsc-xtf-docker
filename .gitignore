@@ -1,1 +1,2 @@
-cred
+*.docker-env.txt
+*.zip

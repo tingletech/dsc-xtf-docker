@@ -1,2 +1,4 @@
 .git
-cred
+*.txt
+*.md
+*.zip
