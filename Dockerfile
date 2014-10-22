@@ -53,11 +53,22 @@ RUN wget -q http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_MINOR_V
 # XTF
 ENV XTF_DATA /xtf/data
 ENV XTF_HOME /xtf
-ENV OAC_TEMPLATE_BASE /
+ENV OAC_TEMPLATE_BASE /xtf/template-base
 
 COPY run.sh /run.sh
 COPY init.sh /init.sh
 RUN chmod +x /*.sh
 
 EXPOSE 8080
+
+# set up user to run the app
+RUN \
+  groupadd -r xtf -g 5555 && \
+  useradd -u 5555 -r -g xtf -d /xtf -s \
+    /sbin/nologin -c "XTF user" xtf && \
+  mkdir /xtf && \
+  chown -R xtf:xtf /xtf /tomcat
+
+USER xtf
+
 CMD ["/run.sh"]

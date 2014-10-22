@@ -3,7 +3,7 @@
 set -ie
 
 # install XTF if it is not there
-if [ ! -d /xtf ]; then
+if [ ! -d /xtf/style ]; then
     /init.sh
 fi
 
